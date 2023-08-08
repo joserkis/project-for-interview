@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Popular Exact Queries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Year
+      </th>
+      <th>
+        Count
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @popular_queries.each do |popular_query| %>
+      <tr>
+        <td>
+          <%= popular_query.year %>
+        </td>
+        <td>
+          <%= popular_query.kount %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Query Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Year
+      </th>
+      <th>
+        Population
+      </th>
+      <th>
+        Query Type
+      </th>
+      <th>
+        Query Executed At
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @query_logs.each do |query_log| %>
+      <tr>
+        <td>
+          <%= query_log.year %>
+        </td>
+        <td>
+          <%= query_log.population %>
+        </td>
+        <td>
+          <%= query_log.query_type %>
+        </td>
+        <td>
+          <%= query_log.created_at.strftime "%d/%m/%Y" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
